@@ -6,6 +6,7 @@
 Example: signing 
 
 ```java
+// java8
 public class TxSignTest {
 
     public static void main(String[] args) throws Exception {

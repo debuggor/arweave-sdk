@@ -36,15 +36,6 @@ public class Transaction {
 
     String signature;
 
-    /**
-     * @param fromPubKey
-     * @param toAddress
-     * @param amountWinston 金额 最小单位
-     * @param feeWinston    手续费 最小单位
-     * @param lastTx        从链上获取的一个字段
-     * @param data          "" 转账交易
-     * @param tags          暂不清楚这个字段具体含义，不包含进交易
-     */
     public Transaction(String fromPubKey, String toAddress, String amountWinston, String feeWinston, String lastTx, String data, String[] tags) {
         this.owner = fromPubKey;
         this.target = toAddress;
@@ -116,7 +107,7 @@ public class Transaction {
         jsonObject.put("target", this.target);
         jsonObject.put("quantity", this.quantity);
         jsonObject.put("reward", this.reward);
-        jsonObject.put("signature", this.signature);
+        jsonObject.put("signature", this.getSignature());
         jsonObject.put("data", this.data);
         return jsonObject;
     }
